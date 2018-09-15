@@ -1,0 +1,8 @@
+.Output {
+    border: 1px solid black;
+    /* border-style: solid; */
+    width: 20%;
+    height: 400px;
+    margin: 20px;
+    display: flex;
+}
