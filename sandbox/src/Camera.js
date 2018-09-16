@@ -1,7 +1,7 @@
 import React from "react";
 import Webcam from "react-webcam";
 import './Camera.css';
-// import Output from "./Output";
+import 'tachyons';
 
 class WebcamCapture extends React.Component {
     setRef = webcam => {
@@ -11,7 +11,12 @@ class WebcamCapture extends React.Component {
     capture = () => {
       const imageSrc = this.webcam.getScreenshot();
       console.log(imageSrc);
+      
       this.props.onScreenshotClick(imageSrc);
+
+      setTimeout = () => {
+
+      };
     };
   
     render() {
@@ -22,17 +27,16 @@ class WebcamCapture extends React.Component {
       };
   
       return (
-        <div className='Camera'>
+        <div>
           <Webcam
+            className='webCam'
             audio={false}
-            // height={350}
             ref={this.setRef}
             screenshotFormat="image/jpeg"
-            // width={350}
             videoConstraints={videoConstraints}
           />
           <br/>
-          <button className='button' onClick={this.capture}>Capture photo</button>
+          <button className='f6 link dim br3 ph3 pv2 mb2 dib white bg-black button' onClick={this.capture}>Capture photo</button>
         </div>
       );
     }

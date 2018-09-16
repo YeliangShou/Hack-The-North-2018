@@ -9,13 +9,15 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 225px;
   padding: 20px;
   color: white;
 }
 
 .button {
-  margin: 20px;
+  margin-top: 20px;
+  margin-bottom: 0;
+  cursor: pointer;
 }
 
 .flexParagraph {
@@ -34,3 +36,4 @@
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
 }
+
