@@ -1,6 +1,7 @@
 import React from "react";
 import Webcam from "react-webcam";
 import "./Camera.css";
+import "tachyons";
 // import Output from "./Output";
 
 class WebcamCapture extends React.Component {
@@ -23,17 +24,19 @@ class WebcamCapture extends React.Component {
         };
 
         return (
-            <div className="Camera">
+            <div>
                 <Webcam
+                    className="webCam"
                     audio={false}
-                    // height={350}
                     ref={this.setRef}
                     screenshotFormat="image/jpeg"
-                    // width={350}
                     videoConstraints={videoConstraints}
                 />
                 <br />
-                <button className="button" onClick={this.capture}>
+                <button
+                    className="f6 link dim br3 ph3 pv2 mb2 dib white bg-black button"
+                    onClick={this.capture}
+                >
                     Capture photo
                 </button>
             </div>

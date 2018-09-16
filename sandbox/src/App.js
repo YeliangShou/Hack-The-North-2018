@@ -1,17 +1,18 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
-// const axios = require("axios");
 import axios from "axios";
 // import Output from './Output';
 import WebcamCapture from "./Camera";
+import "tachyons";
 
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
             webCam: false,
-            picture: null
+            picture: null,
+            output: ""
         };
     }
 
@@ -37,12 +38,19 @@ class App extends Component {
                 <header className="App-header">
                     <img src={logo} className="App-logo" alt="logo" />
                     <h1 className="App-title">Sign Language To Text</h1>
+                    {this.state.output ? (
+                        <h3>The symbol is: {this.state.output}</h3>
+                    ) : (
+                        <h3>
+                            Turn the camera on and take a picture of your sign!
+                        </h3>
+                    )}
                 </header>
                 <button
-                    className="button"
+                    className="f6 link dim br3 ph3 pv2 mb2 dib white bg-black button"
                     onClick={this.handleVideoButtonClick}
                 >
-                    Toggle video on/off
+                    {this.state.webCam ? "Turn camera off" : "Turn camera on"}
                 </button>
 
                 {this.state.webCam ? (

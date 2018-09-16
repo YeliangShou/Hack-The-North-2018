@@ -1,5 +1,10 @@
-.Camera {
-    text-align: center;
+.button {
+    cursor: pointer;
+}
+
+.webCam {
+    padding: 0;
+    margin:0;
 }
 
   
