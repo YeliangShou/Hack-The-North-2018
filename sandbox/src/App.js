@@ -24,12 +24,20 @@ class App extends Component {
         axios
             .post("http://127.0.0.1:5000/react", { data: pic })
             .then(res => {
-                console.log(res);
+                let data = res.data;
+                if (data === 0) {
+                    this.setState({ output: "Unavailable: Try Again" });
+                    return;
+                }
+                let letter = data.split("/")[0];
+                let accuracy = data.split("/")[1];
+                this.setState({ picture: pic });
+                this.setState({ output: letter });
             })
             .catch(e => {
                 console.log(e);
+                console.log("error");
             });
-        this.setState({ picture: pic });
     };
 
     render() {
