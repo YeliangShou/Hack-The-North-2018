@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       webCam: false,
       picture: null,
-      output: "asjdhfj",
+      output: "",
     }
   }
 
@@ -28,7 +28,7 @@ class App extends Component {
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h1 className="App-title">Sign Language To Text</h1>
-          {this.state.output ? <h3>The symbol is: {this.state.output}</h3> : null}
+          {this.state.output ? <h3>The symbol is: {this.state.output}</h3> : <h3>Turn the camera on and take a picture of your sign!</h3>}
         </header>
         <button className='f6 link dim br3 ph3 pv2 mb2 dib white bg-black button' onClick={this.handleVideoButtonClick}>{this.state.webCam ? "Turn camera off" : "Turn camera on"}</button>
 
